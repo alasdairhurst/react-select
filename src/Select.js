@@ -960,11 +960,20 @@ const Select = React.createClass({
 		return null;
 	},
 
+    renderFooter (options) {
+        if (this.props.footerRenderer) {
+            return this.props.footerRenderer(options);
+        }
+        return null;
+    },
+
 	renderOuter (options, valueArray, focusedOption) {
 		let menu = this.renderMenu(options, valueArray, focusedOption);
 		if (!menu) {
 			return null;
 		}
+
+        let footer = this.renderFooter(options);
 
 		return (
 			<div ref="menuContainer" className="Select-menu-outer" style={this.props.menuContainerStyle}>
@@ -974,6 +983,7 @@ const Select = React.createClass({
 						 onMouseDown={this.handleMouseDownOnMenu}>
 					{menu}
 				</div>
+                {footer}
 			</div>
 		);
 	},

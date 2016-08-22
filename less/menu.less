@@ -23,8 +23,13 @@
 	width: 100%;
 	z-index: @select-menu-zindex;
 	-webkit-overflow-scrolling: touch;
+    .has-footer {
+        max-height: none;
+        & > .Select-menu {
+            border-bottom: 1px solid @select-input-border-color;
+        }
+    }
 }
-
 
 // wrapper
 

@@ -974,9 +974,10 @@ const Select = React.createClass({
 		}
 
         let footer = this.renderFooter(options);
+        let footerClass = footer ? "has-footer" : "";
 
 		return (
-			<div ref="menuContainer" className="Select-menu-outer" style={this.props.menuContainerStyle}>
+			<div ref="menuContainer" className={"Select-menu-outer " + footerClass} style={this.props.menuContainerStyle}>
 				<div ref="menu" role="listbox" className="Select-menu" id={this._instancePrefix + '-list'}
 						 style={this.props.menuStyle}
 						 onScroll={this.handleMenuScroll}

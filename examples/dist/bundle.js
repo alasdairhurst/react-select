@@ -1466,10 +1466,11 @@ var Select = _react2['default'].createClass({
 		}
 
 		var footer = this.renderFooter(options);
+		var footerClass = footer ? "has-footer" : "";
 
 		return _react2['default'].createElement(
 			'div',
-			{ ref: 'menuContainer', className: 'Select-menu-outer', style: this.props.menuContainerStyle },
+			{ ref: 'menuContainer', className: "Select-menu-outer " + footerClass, style: this.props.menuContainerStyle },
 			_react2['default'].createElement(
 				'div',
 				{ ref: 'menu', role: 'listbox', className: 'Select-menu', id: this._instancePrefix + '-list',
